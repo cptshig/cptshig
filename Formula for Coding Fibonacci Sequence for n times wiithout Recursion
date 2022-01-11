@@ -1,0 +1,42 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int previousFib1 = 0;
+            int previousFib2 = 1;
+            int nextFib = previousFib1 + previousFib2;
+
+            int count = 0;
+
+            int n = int.Parse(Console.ReadLine());
+
+            while (count < n)
+            {
+                //currentFib = nextnextFib - currentFib;
+                //nextFib = nextnextFib - nextFib; 
+
+                nextFib = nextFib - previousFib1;
+
+                Console.Write(nextFib + " ");
+
+                previousFib2 = nextFib + previousFib1;
+                nextFib = nextFib + previousFib2;
+                previousFib1 = nextFib - previousFib2; 
+              
+
+                n--;
+
+            }
+
+
+
+
+
+        }
+    }    
+}
